@@ -19,11 +19,11 @@
 		</p>
 		<p>
 			Title: <br>
-					<input type="checkbox" name="title" value="Mr."> Mr.<br>
-					<input type="checkbox" name="title" value="Mr."> Mrs.<br>
-					<input type="checkbox" name="title" value="Mr."> Dr.<br>
-					<input type="checkbox" name="title" value="Mr."> Esq.<br>
-					<input type="checkbox" name="title" value="" checked="checked"> None<br>
+					<input type="radio" name="title" value="Mr."> Mr.<br>
+					<input type="radio" name="title" value="Mrs."> Mrs.<br>
+					<input type="radio" name="title" value="Dr."> Dr.<br>
+					<input type="radio" name="title" value="Esq."> Esq.<br>
+					<input type="radio" name="title" value="" checked="checked"> None<br>
 		</p>
 		<p>
 			Favorite Drink:
