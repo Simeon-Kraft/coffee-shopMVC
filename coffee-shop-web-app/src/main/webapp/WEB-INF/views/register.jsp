@@ -12,24 +12,29 @@
 	
 	<form action="/summary">
 		<p>
+			Title: <br>
+					<input type="radio" name="title" value="Mr."> Mr.<br>
+					<input type="radio" name="title" value="Mrs."> Mrs.<br>
+					<input type="radio" name="title" value="Dr."> Dr.<br>
+					<input type="radio" name="title" value="Rev."> Rev.<br>
+					<input type="radio" name="title" value="" checked="checked"> None<br>
+		</p>
+		<p>
 			First Name: <br><input name="first">
 		</p>
 		<p>
 			Last Name: <br><input name="last">
 		</p>
 		<p>
-			Title: <br>
-					<input type="radio" name="title" value="Mr."> Mr.<br>
-					<input type="radio" name="title" value="Mrs."> Mrs.<br>
-					<input type="radio" name="title" value="Dr."> Dr.<br>
-					<input type="radio" name="title" value="Esq."> Esq.<br>
-					<input type="radio" name="title" value="" checked="checked"> None<br>
-		</p>
-		<p>
 			Favorite Drink:
 			<select name="favorite">
+				<option value=""></option>
 				<option value="Coffee">Coffee</option>
 				<option value="Tea">Tea</option>
+				<option value="Soda">Soda</option>
+				<option value="Beer">Beer</option>
+				<option value="White Wine">Wine(White)</option>
+				<option value="Red Wine">Wine(Red)</option>
 				<option value="Other">Other</option>
 			</select>
 		</p>
