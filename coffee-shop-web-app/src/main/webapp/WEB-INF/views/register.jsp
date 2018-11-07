@@ -10,7 +10,7 @@
 <body>
 	<h1>Complete this form to register.</h1>
 	
-	<form action="/summary">
+	<form action="/summary" method="post">
 		<p>
 			Title: <br>
 					<input type="radio" name="title" value="Mr."> Mr.<br>
