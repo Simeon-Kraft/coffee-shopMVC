@@ -16,8 +16,8 @@
   <body>
   <div class="container">
     	<h1>Hello!</h1>
-			<p>Welcome to a super cool coffee shop! <a href="/register" class="btn btn-primary">Get Started</a></p><a href="/menu" class="btn btn-primary">Go to Menu</a></p>
-   				<img id="coffee" alt="coffee" src="/images/coffee.jpg">
+			<p>Welcome to a super cool coffee shop! <a href="/register" class="btn btn-primary">Get Started</a><a href="/menu" class="btn btn-primary">Go to Menu</a></p>
+				<img id="coffee" alt="coffee" src="/images/coffee.jpg">
     <!-- Optional JavaScript -->
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
