@@ -1,1 +1,19 @@
 @charset "ISO-8859-1";
+
+
+.message {
+	text-align: center;
+	color: silver;
+}
+
+table {
+	border: 1px solid black;
+	width: 100%;
+}
+
+body {
+	background-image: url(/images/coffee.jpg);
+	background-position: center; 
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+}

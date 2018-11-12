@@ -6,11 +6,16 @@ h1 {
 }
 
 table {
-	border: 1px solid black;
+	border: 2px solid black;
 	width: 100%;
+	text-align: center;
+}
+#items {
+	text-align: center;
+	background-color: gray; 
 }
 
-body {
+div {
 	background-image: url(/images/coffee.jpg);
 	background-position: center; 
  	background-repeat: no-repeat;

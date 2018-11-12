@@ -12,6 +12,7 @@ SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymo
 <link rel="stylesheet" href="/register.css" />
 </head>
 <body>
+	<div id="background">
 	<div class="container">
 		<h1>Complete this form to register.</h1>
 
@@ -63,6 +64,7 @@ SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymo
 				<button class="btn btn-success" type="submit">Register</button>
 			</p>
 		</form>
+		</div>
 	</div>
 </body>
 </html>

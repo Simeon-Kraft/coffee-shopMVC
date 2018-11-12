@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="/summary.css"/>
 </head>
 <body>
-	<h1>Thank you for registering, ${ user.title } ${ user.last }!</h1>
-		<h3>Please review your information to ensure that everything is correct.</h3>
+	<div class="container">
+	<h1 class="message">Thank you for registering, ${ user.title } ${ user.last }!</h1>
+		<h3 class="message">Please review your information to ensure that everything is correct.</h3>
 			<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
@@ -27,6 +28,6 @@
 		<a href="http://localhost:8080/"><button>Looks good!</button></a>
 	</p>
 	
-
+	</div>
 </body>
 </html>

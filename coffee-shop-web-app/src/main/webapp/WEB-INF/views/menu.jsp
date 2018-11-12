@@ -21,7 +21,7 @@ SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymo
 			</tr>
 		</thead>
 		<c:forEach var= "items" items= "${ items }">
-		<tr class="table-success">
+		<tr class="table-success" id="items">
 			<td>${ items.name }</td>
 			<td>${ items.price }</td>
 			<td>${ items.description }</td>
