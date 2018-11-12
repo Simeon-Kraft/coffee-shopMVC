@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+h1 {
+	color: red;
+	background-image: url(/images/coffee.jpg);
+}
+
+.container {
+	
+	height: 100%;
+	margin: 0;
+}

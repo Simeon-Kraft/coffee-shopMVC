@@ -6,14 +6,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>form-summary</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="/summary.css"/>
 </head>
 <body>
-	<h1>Thank you for registering, ${ title } ${ first }!</h1>
+	<h1>Thank you for registering, ${ user.title } ${ user.last }!</h1>
 		<h3>Please review your information to ensure that everything is correct.</h3>
-			<p>Name: <strong>${ first } ${ last }</strong></p>
-			<p>Favorite Drink: <strong>${ favorite }</strong></p>
-			<p>Email: <strong>${ email }</strong></p>
-			<p>Phone Number: <strong>${ number }</strong></p>
+			<table class="table table-sm">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">First Name</th><th scope="col">Last Name</th><th scope="col">Birthday</th><th scope="col">Favorite Drink</th><th scope="col">Phone Number</th><th scope="col">Email</th>
+				</tr>
+			</thead>
+				<tr class="table-success">
+					<td>${ user.first }</td><td>${ user.last }</td><td>${ user.birthday }</td><td>${ user.favorite }</td><td>${ user.number }</td><td>${ user.email }</td>
+				</tr>
+			</table>
 	
 	<p>
 		<a href="http://localhost:8080/"><button>Looks good!</button></a>
