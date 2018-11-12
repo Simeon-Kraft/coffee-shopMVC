@@ -1,7 +1,10 @@
 @charset "ISO-8859-1";
 
 #background {
-	background-image: url(/images/espresso.jpg)
+	background-image: url(/images/espresso.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 form {
 	text-align: center;
