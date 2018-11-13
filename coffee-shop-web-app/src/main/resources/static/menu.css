@@ -1,8 +1,9 @@
 @charset "ISO-8859-1";
 
-h1 {
+h3 {
+	color: white;
 	text-align: center;
-	color: navy;
+	border: 2px solid black;
 }
 
 table {
@@ -15,9 +16,12 @@ table {
 	background-color: gray; 
 }
 
-div {
-	background-image: url(/images/coffee.jpg);
-	background-position: center; 
- 	background-repeat: no-repeat;
- 	background-size: cover;
+.bgimg {
+    background-image: url('/images/board.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+#add {
+	border: 2px solid black;
 }

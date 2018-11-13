@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="/register.css" />
 </head>
 <style>
+body, html {height: 100%}
 </style>
 <body>
 	<div class="bgimg">
@@ -42,7 +43,7 @@
 					</p>
 					<p>
 						Favorite Drink: <select name="favorite" required
-							class="btn btn-info">
+							class="btn btn-secondary">
 							<option value="Coffee">Coffee</option>
 							<option value="Tea">Tea</option>
 							<option value="Soda">Soda</option>
@@ -63,7 +64,7 @@
 							required minlength="6">
 					</p>
 					<p>
-						<button class="btn btn-success" type="submit">Register</button>
+						<button id="register" class="btn btn-secondary" type="submit">Register</button>
 					</p>
 					<p>
 					</p>

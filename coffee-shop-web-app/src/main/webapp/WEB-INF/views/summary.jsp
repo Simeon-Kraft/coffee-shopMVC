@@ -9,10 +9,15 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="/summary.css"/>
 </head>
+<style>
+body, html {height: 100%}
+</style>
 <body>
-	<div class="container">
-	<h1 class="message">Thank you for registering, ${ user.title } ${ user.last }!</h1>
-		<h3 class="message">Please review your information to ensure that everything is correct.</h3>
+	<div class="bgimg">
+		<div>
+			<div class="container">
+
+				<h3 class="message">Please review your information to ensure that everything is correct.</h3>
 			<table class="table table-sm">
 			<thead class="thead-dark">
 				<tr>
@@ -25,9 +30,10 @@
 			</table>
 	
 	<p>
-		<a href="http://localhost:8080/"><button>Looks good!</button></a>
+		<a href="http://localhost:8080/"><button id="submit" class="btn btn-secondary" type="submit">Looks good!</button></a>
 	</p>
-	
+			</div>
+		</div>
 	</div>
 </body>
 </html>
