@@ -1,21 +1,11 @@
 @charset "ISO-8859-1";
 
-#background {
-	background-image: url(/images/rings.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+.bgimg {
+    background-image: url('/images/coffee.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
 }
 form {
-	text-align: center;
-	width: 50%;
-	height: 50%;
-	display: inline;
-}
-#buttons {
-	padding:5px;
-    color:white;
-    font-family:corbel,sans-serif;
-    font-size: 14px;
-    margin: 10px;
+	color: white;
 }
