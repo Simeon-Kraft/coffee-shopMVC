@@ -14,4 +14,12 @@ h1 {
     margin-right: auto;
     width: 50%; 
 }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+.back-img {
+	background-image: url("/images/rings.jpg");
+}
 

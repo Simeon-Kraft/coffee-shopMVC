@@ -1,14 +1,25 @@
 package co.grandcircus.coffeeshopwebapp;
 
 public class MenuItem {
+	private Long id;
 	private String name;
 	private String description;
-	private double price;
+	private Double price;
 	
-	public MenuItem(String name, String description, double price) {
+	public MenuItem() {}
+	
+	public MenuItem(Long id, String name, String description, Double price) {
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
+	}
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -27,11 +38,11 @@ public class MenuItem {
 		this.description = description;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	

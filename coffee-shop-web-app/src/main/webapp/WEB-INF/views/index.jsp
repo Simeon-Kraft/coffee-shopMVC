@@ -15,9 +15,21 @@
   </head>
   <body>
   <div class="container">
+  	<div class="back-img">
     	<h1>Hello!</h1>
-			<p>Welcome to a super cool coffee shop! <a href="/register" class="btn btn-primary">Get Started</a><a href="/menu" class="btn btn-primary">Go to Menu</a></p>
-				<img id="coffee" alt="coffee" src="/images/coffee.jpg">
+			<p>Welcome to a super cool coffee shop!</p>
+				<div class="navbar">
+					<a href="/register">Register</a>
+					<a href="/menu">Menu</a>
+					<div class="dropdown">
+						<button class="dropbtn">-select-</button>
+						<div class="dropdown-content">
+							<a href="/register">Register</a>
+							<a href="/menu">Menu</a>
+						</div>
+					</div>
+				</div>
+	</div>	
     <!-- Optional JavaScript -->
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

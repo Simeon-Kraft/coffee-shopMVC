@@ -3,6 +3,7 @@ package co.grandcircus.coffeeshopwebapp;
 import java.util.Date;
 
 public class User {
+	private Long id;
 	private String title;
 	private String first;
 	private String last;
@@ -14,6 +15,26 @@ public class User {
 	
 	public User() {}
 	
+	public User(Long id, String title, String first, String last, String birthday, String favorite, String email
+			, String number, String password) {
+		this.id = id;
+		this.title = title;
+		this.first = first;
+		this.last = last;
+		this.birthday = birthday;
+		this.favorite = favorite;
+		this.email = email;
+		this.number = number;
+		this.password = password;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}

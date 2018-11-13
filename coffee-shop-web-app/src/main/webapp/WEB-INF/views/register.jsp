@@ -12,10 +12,10 @@
 <body>
 	<div id="background">
 	<div class="container">
-		<h1>Complete this form to register.</h1>
 
 		<form action="/summary" method="post">
-			<p>
+		<h1>Complete this form to register.</h1>
+			<p id="buttons">
 				Title: <br> <input type="radio" name="title" value="Mr.">
 				Mr.<br> <input type="radio" name="title" value="Mrs.">
 				Mrs.<br> <input type="radio" name="title" value="Dr.">
