@@ -32,14 +32,13 @@ body, html {
 					</thead>
 					<c:forEach var="items" items="${ items }">
 						<tr class="table-success" id="items">
-							<td><a href="/menu/${items.id}">${ items.name }</a></td>
+							<td>${ items.name }</td>
 							<td>${ items.price }</td>
 							<td>${ items.description }</td>
 						</tr>
 					</c:forEach>
 				</table>
-				<a href="/add"><button id="add" class="btn btn-success">Add Item</button></a>
-				<a href="/">Back</a>
+				<a href="/"><button id="add" class="btn btn-secondary">Back</button></a>
 			</div>
 		</div>
 	</div>

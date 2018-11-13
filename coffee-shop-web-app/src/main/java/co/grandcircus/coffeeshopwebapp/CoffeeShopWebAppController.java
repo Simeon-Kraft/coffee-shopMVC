@@ -35,6 +35,11 @@ public class CoffeeShopWebAppController {
 		
 		return new ModelAndView("summary", "user", user);
 	}
+	@RequestMapping("/userMenu")
+	public ModelAndView showUserMenu() {
+		List<MenuItem> itemList = menuItemDao.findAll();
+		return new ModelAndView("userMenu", "items", itemList);
+	}
 	
 	@RequestMapping("/menu")
 	public ModelAndView showMenu() {

@@ -30,12 +30,13 @@ body, html {height: 100%}
    	 <p class="title">it's<br>COFFEE<br>time</p>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><a href="/menu"><button class="w3-button w3-black">menu</button></a></p>
+    <p><a href="/userMenu"><button class="w3-button w3-black">menu</button></a></p>
     <p><a href="/register"><button class="w3-button w3-black">register</button></a></p>
   </div>
   <div class="w3-display-bottomleft w3-container">
     <p class="w3-small">Simeon Kraft:</p>
     <p class="w3-small">Powered by Java and java.</p>
+    <p class="w3-small"><a href="menu"><button class="w3-button w3-black">I'm an admin.</button></a></p>
   </div>
 </div>
 	<!-- Optional JavaScript -->
