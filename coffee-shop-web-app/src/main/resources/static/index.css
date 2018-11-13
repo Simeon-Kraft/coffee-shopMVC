@@ -1,25 +1,13 @@
 @charset "ISO-8859-1";
 
-h1 {
+.title {
 	color: white;
+	font-size: 105%;
+	text-align: center;
 }
-
-.container {
-	height: 100%;
-	margin: 0;
-}
-#coffee{
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%; 
-}
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
-}
-.back-img {
-	background-image: url("/images/rings.jpg");
+#titlebox {
+	background-color: black;
+	height: 65%;
+	margin: 10px;
 }
 

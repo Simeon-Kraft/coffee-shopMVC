@@ -20,7 +20,7 @@ public class MenuItemDao {
 	}
 	
 	public void create(MenuItem menuItem) {
-		String sql = "INSERT INTO menu-items (name, description, price) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO menu_items (name, description, price) VALUES (?, ?, ?)";
 		
 		jdbcTemplate.update(sql, menuItem.getName(), menuItem.getDescription(), menuItem.getPrice());
 	}
