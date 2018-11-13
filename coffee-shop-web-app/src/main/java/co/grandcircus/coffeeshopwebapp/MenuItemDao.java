@@ -2,26 +2,39 @@ package co.grandcircus.coffeeshopwebapp;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Repository;
 
 
+
 @Repository 
+@Transactional
 public class MenuItemDao {
 	
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	@PersistenceContext
+	private EntityManager em;
 	
 	public List<MenuItem> findAll() {
-		
-		return jdbcTemplate.query("SELECT * FROM menu_items", new BeanPropertyRowMapper<>(MenuItem.class));
+		return em.createQuery("FROM MenuItem", MenuItem.class).getResultList();
 	}
 	
 	public void create(MenuItem menuItem) {
-		String sql = "INSERT INTO menu_items (name, description, price) VALUES (?, ?, ?)";
-		
-		jdbcTemplate.update(sql, menuItem.getName(), menuItem.getDescription(), menuItem.getPrice());
+		em.persist(menuItem);
+	}
+	
+	public void update(MenuItem menuItem) {
+		em.merge(menuItem);
+	}
+	
+	public MenuItem findById(Long id) {
+		return em.find(MenuItem.class, id);
+	}
+	
+	public void delete(Long id) {
+		MenuItem menuItem = em.getReference(MenuItem.class, id);
+		em.remove(menuItem);
 	}
 }

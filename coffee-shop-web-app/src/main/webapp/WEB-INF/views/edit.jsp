@@ -22,7 +22,7 @@ body, html {
 		<div>
 			<div class="container">
 				<h3>Add Item</h3>
-				<form action="/menu" method="post">
+				<form action="/menu/${menuItem.id}/edit" method="post">
 					<table class="table table-sm">
 						<thead class="thead-dark">
 							<tr>
@@ -32,13 +32,15 @@ body, html {
 							</tr>
 						</thead>
 						<tr class="table-success" id="items">
-							<td><input name="name"></td>
-							<td><input name="price"></td>
-							<td><input name="description"></td>
+							<td><input type="text" name="name" value="${menuItem.name}" /></td>
+							<td><input type="text" name="price" value="${menuItem.price}" /></td>
+							<td><input type="text" name="description" value="${menuItem.description}" /></td>
 						</tr>
 					</table>
-					<button id="add" class="btn btn-success">Add Item</button>
+					<button id="add" class="btn btn-success">Update Item</button>
+				<p>
 					<a href="/menu">Cancel</a>
+				</p>
 				</form>
 			</div>
 		</div>

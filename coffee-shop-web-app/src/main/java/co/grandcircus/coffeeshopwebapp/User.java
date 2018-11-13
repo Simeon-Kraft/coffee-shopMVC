@@ -1,15 +1,28 @@
 package co.grandcircus.coffeeshopwebapp;
 
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "user")
 public class User {
+	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String title;
+	@Column(name= "first_name")
 	private String first;
+	@Column(name= "last_name")
 	private String last;
 	private String birthday;
+	@Column(name= "favorite_drink")
 	private String favorite;
 	private String email;
+	@Column(name= "phone_number")
 	private String number;
 	private String password;
 	

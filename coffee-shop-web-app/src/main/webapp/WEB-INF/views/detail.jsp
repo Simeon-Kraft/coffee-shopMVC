@@ -10,7 +10,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="/menu.css" />
 <meta charset="ISO-8859-1">
-<title>menu</title>
+<title>item</title>
 </head>
 <style>
 body, html {
@@ -23,22 +23,22 @@ body, html {
 			<div class="container">
 				<h3>Menu Items</h3>
 				<table class="table table-sm">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">Name</th>
-							<th scope="col">Price</th>
-							<th scope="col">Description</th>
-						</tr>
-					</thead>
-					<c:forEach var="items" items="${ items }">
-						<tr class="table-success" id="items">
-							<td><a href="/menu/${items.id}">${ items.name }</a></td>
-							<td>${ items.price }</td>
-							<td>${ items.description }</td>
-						</tr>
-					</c:forEach>
+					<tr class="table-success" id="items">
+						<th scope="row">Name</th>
+						<td>${menuItem.name}</td>
+					</tr>
+					<tr class="table-success" id="items">
+						<th scope="row">Price</th>
+						<td>${menuItem.price}</td>
+					</tr>
+					<tr class="table-success" id="items">
+						<th scope="row">Description</th>
+						<td>${menuItem.description}</td>
+					</tr>
 				</table>
-				<a href="/add"><button id="add" class="btn btn-success">Add Item</button></a>
+				<a class="btn btn-secondary" href="/menu/${menuItem.id}/edit">Edit</a>
+				<a class="btn btn-danger" href="/menu/${menuItem.id}/delete">Delete</a>
+				<a class="btn link" href="/menu">Back to List</a>
 			</div>
 		</div>
 	</div>

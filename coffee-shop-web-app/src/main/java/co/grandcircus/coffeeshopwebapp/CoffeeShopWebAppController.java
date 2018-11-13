@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,7 +43,6 @@ public class CoffeeShopWebAppController {
 	}
 	@PostMapping("/menu")
 	public ModelAndView newMenu(MenuItem menuItem) {
-		System.out.println("HELLO");
 		menuItemDao.create(menuItem);
 		
 		return new ModelAndView("redirect:/menu");
@@ -51,6 +51,29 @@ public class CoffeeShopWebAppController {
 	public ModelAndView addItem() {
 		ModelAndView mv = new ModelAndView("add");
 		return mv;
+	}
+	@RequestMapping("/menu/{id}")
+	public ModelAndView showItem(@PathVariable("id") Long id) {
+		MenuItem menuItem = menuItemDao.findById(id);
+		
+		return new ModelAndView("detail", "menuItem", menuItem);
+	}
+	@RequestMapping("/menu/{id}/delete")
+	public ModelAndView remove(@PathVariable("id") Long id) {
+		menuItemDao.delete(id);
+		return new ModelAndView("redirect:/menu");
+	}
+	@RequestMapping("/menu/{id}/edit")
+	public ModelAndView edit(@PathVariable("id") Long id) {
+		MenuItem menuItem = menuItemDao.findById(id);
+		
+		return new ModelAndView("edit", "menuItem", menuItem);
+	}
+	@PostMapping("/menu/{id}/edit")
+	public ModelAndView save(@PathVariable("id") Long id, MenuItem menuItem) {
+		menuItem.setId(id);
+		menuItemDao.update(menuItem);
+		return new ModelAndView("redirect:/menu");
 	}
 	
 

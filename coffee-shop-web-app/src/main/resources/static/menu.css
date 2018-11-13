@@ -10,6 +10,7 @@ table {
 	border: 2px solid black;
 	width: 100%;
 	text-align: center;
+	background-color: gray;
 }
 #items {
 	text-align: center;
@@ -22,6 +23,6 @@ table {
     background-position: center;
     background-size: cover;
 }
-#add {
-	border: 2px solid black;
-}
+
+
+
