@@ -48,8 +48,16 @@ public class CoffeeShopWebAppController {
 	}
 	@PostMapping("/menu")
 	public ModelAndView newMenu(MenuItem menuItem) {
-		menuItemDao.create(menuItem);
+		List<MenuItem> itemList = menuItemDao.findAll();
 		
+		for (MenuItem item : itemList) {
+			if (item.getName().equalsIgnoreCase(menuItem.getName())) {
+				System.out.println("That item already exists.");
+				return new ModelAndView("redirect:/menu");
+			}
+		}
+		
+		menuItemDao.create(menuItem);
 		return new ModelAndView("redirect:/menu");
 	}
 	@RequestMapping("/add")
