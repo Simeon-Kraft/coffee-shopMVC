@@ -36,7 +36,7 @@ body, html {
 							<td><a href="/menu/${items.id}">${ items.name }</a></td>
 							<td>${ items.price }</td>
 							<td>${ items.description }</td>
-							<td><a class="btn btn-secondary" href="/menu/${items.id}/edit">Edit</a><a  class="btn btn-danger" href="/menu/${items.id}/delete">Delete</a></td>
+							<td><a class="btn btn-secondary" href="/menu/${items.id}/edit">Edit</a><span>	</span><a  class="btn btn-danger" href="/menu/${items.id}/delete">Delete</a></td>
 						</tr>
 					</c:forEach>
 				</table>

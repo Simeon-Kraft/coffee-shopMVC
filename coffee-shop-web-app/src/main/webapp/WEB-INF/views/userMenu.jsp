@@ -38,7 +38,7 @@ body, html {
 						</tr>
 					</c:forEach>
 				</table>
-				<a href="/"><button id="add" class="btn btn-secondary">Back</button></a>
+				<a href="/"><button id="add" class="btn btn-info">Back</button></a>
 			</div>
 		</div>
 	</div>
