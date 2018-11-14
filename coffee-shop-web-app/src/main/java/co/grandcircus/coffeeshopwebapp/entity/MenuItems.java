@@ -1,4 +1,4 @@
-package co.grandcircus.coffeeshopwebapp;
+package co.grandcircus.coffeeshopwebapp.entity;
 
 import java.util.ArrayList;
 import java.util.List;

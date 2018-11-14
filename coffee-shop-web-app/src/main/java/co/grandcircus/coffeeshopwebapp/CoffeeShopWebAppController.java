@@ -9,6 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import co.grandcircus.coffeeshopwebapp.dao.CartItemDao;
+import co.grandcircus.coffeeshopwebapp.dao.MenuItemDao;
+import co.grandcircus.coffeeshopwebapp.dao.UserDao;
+import co.grandcircus.coffeeshopwebapp.entity.CartItem;
+import co.grandcircus.coffeeshopwebapp.entity.MenuItem;
+import co.grandcircus.coffeeshopwebapp.entity.MenuItems;
+import co.grandcircus.coffeeshopwebapp.entity.User;
+
 @Controller
 public class CoffeeShopWebAppController {
 	
@@ -17,6 +25,9 @@ public class CoffeeShopWebAppController {
 	
 	@Autowired
 	private MenuItemDao menuItemDao;
+	
+	@Autowired
+	private CartItemDao cartItemDao;
 	
 	@Autowired
 	private UserDao userDao;
@@ -39,6 +50,41 @@ public class CoffeeShopWebAppController {
 	public ModelAndView showUserMenu() {
 		List<MenuItem> itemList = menuItemDao.findAll();
 		return new ModelAndView("userMenu", "items", itemList);
+	}
+	
+	@RequestMapping("/userMenu/{id}")
+	public ModelAndView addItemToCart(@PathVariable("id") Long id) {
+		CartItem cartItem = new CartItem();
+		cartItem.setMenuItem(menuItemDao.findById(id));
+		cartItem.setQuantity((long) 1);
+		
+		
+		cartItemDao.create(cartItem);
+		return new ModelAndView("redirect:/userMenu");
+	}
+	
+	@RequestMapping("/userMenu/{id}/delete")
+	public ModelAndView deleteItem(@PathVariable("id") Long id) {
+		
+		cartItemDao.delete(id);
+		return new ModelAndView("redirect:/cart");
+	}
+	
+	@RequestMapping("/cart")
+	public ModelAndView showCart() {
+		List<CartItem> itemList = cartItemDao.findAll();
+		double total = 0;
+		
+		for (CartItem item : itemList) {
+			total = total + item.getMenuItem().getPrice();
+		}
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("subtotal", total);
+		mv.addObject("total", total + (total * .06));
+		mv.addObject("items", itemList);
+		
+		return mv;
 	}
 	
 	@RequestMapping("/menu")

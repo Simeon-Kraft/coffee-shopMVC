@@ -1,4 +1,4 @@
-package co.grandcircus.coffeeshopwebapp;
+package co.grandcircus.coffeeshopwebapp.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

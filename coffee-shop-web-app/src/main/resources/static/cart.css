@@ -1,0 +1,44 @@
+@charset "ISO-8859-1";
+
+h3 {
+	color: white;
+	text-align: center;
+	border: 2px solid black;
+	background-color: black;
+}
+
+table {
+	border: 2px solid black;
+	width: 100%;
+	text-align: center;
+}
+#items {
+	text-align: center;
+}
+
+.bgimg {
+    background-image: url('/images/beans.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+td {
+	color: black;
+}
+#total {
+	border: 2px solid black;
+	color: black;
+}
+.btn {
+	margin: 4px;
+	margin-left: 6px;
+	margin-right: 6px;
+	text-align: center;
+}
+#minus {
+	width: 37px;
+}
+
+
+
+
