@@ -42,7 +42,7 @@ body, html {
 					</c:forEach>
 					<thead class="thead-dark">
 					<tr>
-						<th scope="col">Subtotal: $${ subtotal }</th>
+						<th scope="col">Subtotal: $<fmt:formatNumber type="number" maxFractionDigits="2" value="${subtotal}"/></th>
 						<th scope="col"></th>
 						<th scope="col"></th>
 						<th scope="col"></th>

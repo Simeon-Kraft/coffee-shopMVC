@@ -112,9 +112,17 @@ public class CoffeeShopWebAppController {
 	public ModelAndView addItemToCart(@PathVariable("id") Long id) {
 		CartItem cartItem = new CartItem();
 		cartItem.setMenuItem(menuItemDao.findById(id));
+		
+		for (CartItem c : cartItemDao.findAll()) {
+			if (c.getMenuItem().getId() == cartItem.getMenuItem().getId()) {
+				Long qty = c.getQuantity() + 1;
+				c.setQuantity(qty);
+				cartItemDao.update(c);
+				return new ModelAndView("redirect:/userMenu");
+			}
+		}
+		
 		cartItem.setQuantity((long) 1);
-		
-		
 		cartItemDao.create(cartItem);
 		return new ModelAndView("redirect:/userMenu");
 	}
@@ -132,7 +140,7 @@ public class CoffeeShopWebAppController {
 		double total = 0;
 		
 		for (CartItem item : itemList) {
-			total = total + item.getMenuItem().getPrice();
+			total = total + (item.getMenuItem().getPrice() * item.getQuantity());
 		}
 		
 		
