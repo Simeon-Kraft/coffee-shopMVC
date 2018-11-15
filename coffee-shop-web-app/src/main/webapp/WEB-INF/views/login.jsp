@@ -17,7 +17,7 @@
 body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-    background-image: url('/images/beans.jpg');
+    background-image: url('/images/beansBW.jpg');
     min-height: 100%;
     background-position: center;
     background-size: cover;
@@ -26,25 +26,25 @@ body, html {height: 100%}
 <body>
 
 <div class="bgimg w3-display-container w3-text-white">
-  <div id="titlebox" class="w3-display-middle w3-jumbo">
-   	 <p class="title">it's<br>COFFEE<br>time</p>
+  <div id="loginbox" class="w3-display-middle w3-large">
+   	 <form action="/login" method="post">
+   	 	<p class="login"><label for="username">Email:</label> <input class="input-field" id="email" name="email" value="${ param.email }" required minlength="2" /></p>
+   	 	
+   	 	<p class="login"><label for="password">Password:</label>   <input class="input-field" id="password" type="password" name="password" required minlength="2" /></p>
+   	 	<p id="loginbtn"><button type="submit" class="w3-button w3-white">login</button></p>
+   	 	<p class="message">${ message }</p>
+   	 </form>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-  	<p class="message">${ message }</p>
-  	<c:if test="${ empty user }">
-    	<p><a href="/register"><button class="w3-button w3-black">register</button></a></p>
-    	<p><a href="/login"><button class="w3-button w3-black">login</button></a></p>
-    </c:if>
-    <c:if test="${ not empty user }">
-   		 <p><a href="/userMenu"><button class="w3-button w3-black">menu</button></a></p>
-   		 <p><a href="/logout"><button class="w3-button w3-black">logout</button></a></p>
-	</c:if>
+    <p><a href="/"><button class="w3-button w3-black">home</button></a></p>
+    <p><a href="/register"><button class="w3-button w3-black">register</button></a></p>
   </div>
- 
+  <div class="w3-display-bottomright w3-container">
+    <p class="w3-small">Just do it.</p>
+  </div>
   <div class="w3-display-bottomleft w3-container">
     <p class="w3-small">Simeon Kraft</p>
     <p class="w3-small">Powered by Java and java.</p>
-    <p class="w3-small"><a href="menu"><button class="w3-button w3-black">I'm an admin.</button></a></p>
   </div>
 </div>
 	<!-- Optional JavaScript -->

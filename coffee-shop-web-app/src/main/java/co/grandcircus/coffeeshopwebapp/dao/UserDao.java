@@ -8,6 +8,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.mysql.cj.Query;
+
 import co.grandcircus.coffeeshopwebapp.entity.User;
 
 @Repository
@@ -23,6 +25,12 @@ public class UserDao {
 
 	public void create(User user) {
 		em.persist(user);
+	}
+	
+	public User findByEmail(String email) {
+		
+		String hql = "FROM User WHERE email = :email";
+		return em.createQuery(hql, User.class).setParameter("email", email).getSingleResult();		
 	}
 
 }

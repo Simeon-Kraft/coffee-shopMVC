@@ -12,3 +12,8 @@ form {
 #register {
 	border: 2px solid black;
 }
+.message {
+	padding: 8px;
+	background-color: pink;
+	color: white;
+}

@@ -54,6 +54,7 @@ body, html {height: 100%}
 						</select>
 					</p>
 					<p>
+						<p class="message">${ message }</p>
 						Email: <br> <input name="email" type="email">
 					</p>
 					<p>

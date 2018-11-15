@@ -20,6 +20,10 @@ public class CartItemDao {
 	public List<CartItem> findAll() {
 		return em.createQuery("FROM CartItem", CartItem.class).getResultList();
 	}
+	
+	public List<CartItem> findAllDistinct() {
+		return em.createQuery("DISTINCT FROM CartItem", CartItem.class).getResultList();
+	}
 
 	public void create(CartItem cartItem) {
 		em.persist(cartItem);
