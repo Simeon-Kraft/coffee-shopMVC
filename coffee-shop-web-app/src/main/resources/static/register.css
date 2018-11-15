@@ -9,8 +9,9 @@
 form {
 	color: white;
 }
-#register {
-	border: 2px solid black;
+
+.message:empty {
+	display: none;
 }
 .message {
 	padding: 8px;

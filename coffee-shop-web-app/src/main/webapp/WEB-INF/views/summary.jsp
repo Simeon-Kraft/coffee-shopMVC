@@ -46,9 +46,10 @@ body, html {
 					</table>
 
 					<p>
-						<button class="btn btn-secondary" type="submit">Looks good!</button>
+						<button class="btn btn-success" type="submit">Looks good!</button>
 					</p>
 				</form>
+				<a href="redirect:/register"><button class="btn btn-secondary">Edit</button></a>
 			</div>
 		</div>
 	</div>
