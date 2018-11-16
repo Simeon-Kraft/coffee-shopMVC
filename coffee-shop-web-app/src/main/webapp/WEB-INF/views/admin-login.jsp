@@ -27,12 +27,12 @@ body, html {height: 100%}
 <body>
 
 <div class="bgimg w3-display-container w3-text-white">
-  <div id="loginbox" class="w3-display-topleft w3-large">
+  <div id="loginbox" class="w3-display-middle w3-large">
    	 <form action="/admin-login" method="post">
    	 	<p class="login"><label for="username">Email:</label> <input class="input-field" id="email" name="email" value="${ param.email }" required minlength="2" /></p>
    	 	
    	 	<p class="login"><label for="password">Password:</label>   <input class="input-field" id="password" type="password" name="password" required minlength="2" /></p>
-   	 	<p id="loginbtn"><button type="submit" class="w3-button w3-white">login</button></p>
+   	 	<p class="loginbtn"><button type="submit" class="w3-button w3-white">login</button><a class="loginbtn" href="/">back</a></p>
    	 	<p class="message">${ message }</p>
    	 </form>
   </div>

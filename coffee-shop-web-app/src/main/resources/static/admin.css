@@ -5,15 +5,11 @@
 	font-size: 105%;
 	text-align: center;
 }
-#titlebox {
-	background-color: black;
-	height: 65%;
-	margin: 10px;
-}
+
 #loginbox {
-	background-color: black;
 	margin: 10px;
 	height: 25%;
+	background-color: black;
 }
 .message:empty {
 	display: none;
@@ -22,13 +18,15 @@
 	padding: 8px;
 	background-color: pink;
 	color: black;
+	text-align: center;
 }
 .login {
 	font-size: medium;
 	margin: 12px;
 }
-#loginbtn {
+.loginbtn {
 	margin: 12px;
+	float: inherit;
 }
 .input-field {
 	font-size: small;

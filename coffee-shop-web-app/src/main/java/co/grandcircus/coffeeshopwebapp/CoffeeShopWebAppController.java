@@ -138,10 +138,10 @@ public class CoffeeShopWebAppController {
 			return new ModelAndView("admin-login", "message", "NOPE");
 		}
 		
-		if (!user.getEmail().equals(admin.getEmail())) {
+		if (!email.equals(admin.getEmail())) {
 			return new ModelAndView("admin-login", "message", "NOPE");
 		}
-		if (!user.getPassword().equals(admin.getPassword())) {
+		if (!password.equals(admin.getPassword())) {
 			return new ModelAndView("admin-login", "message", "NOPE");
 		}
 		
