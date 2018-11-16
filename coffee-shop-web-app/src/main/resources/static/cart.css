@@ -35,7 +35,17 @@ td {
 	margin-right: 6px;
 	text-align: center;
 }
-
+#decrease {
+	width: 20px;
+}
+.message:empty {
+	display: none;
+}
+.message {
+	padding: 8px;
+	background-color: pink;
+	color: black;
+}
 
 
 

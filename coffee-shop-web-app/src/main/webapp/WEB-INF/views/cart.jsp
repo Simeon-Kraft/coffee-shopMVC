@@ -39,7 +39,7 @@ body, html {
 						<tr class="table-success" id="items">
 							<td>${ items.menuItem.name }</td>
 							<td>${ items.menuItem.price }</td>
-							<td>${ items.quantity }</td>
+							<td><a href="/cart/${ items.id }/increase"><button class="btn btn-info" >+</button></a>${ items.quantity }<a href="/cart/${ items.id }/decrease"><button id="decrease" class="btn btn-warning" >-</button></a></td>
 							<td><a href="/userMenu/${ items.id }/delete"><button class="btn btn-danger">Delete</button></a></td>
 						</tr>
 					</c:forEach>

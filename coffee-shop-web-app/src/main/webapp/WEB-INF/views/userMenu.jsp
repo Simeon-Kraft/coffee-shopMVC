@@ -36,7 +36,7 @@ body, html {
 					</thead>
 					<c:forEach var="items" items="${ items }">
 						<tr class="table-success" id="items">
-							<td>${ items.name }</td>
+							<td>${ items.name }<br><p class="message">${ message }</p></td>
 							<td>${ items.price }</td>
 							<td>${ items.description }</td>
 							<td><a href="/userMenu/${ items.id }"><button class="btn btn-success">Add</button></a></td>

@@ -151,8 +151,37 @@ public class CoffeeShopWebAppController {
 		
 	}
 	
+	@RequestMapping("/cart/{id}/increase")
+	public ModelAndView increaseQuantity(@PathVariable("id") Long id, @SessionAttribute(name="user", required=false) User user, HttpSession session) {
+		
+		CartItem item = cartItemDao.findById(id);
+		Long qty = item.getQuantity();
+		item.setQuantity(qty + 1);
+		cartItemDao.update(item);
+		
+		
+		return new ModelAndView("redirect:/cart");
+	}
+	
+	@RequestMapping("/cart/{id}/decrease")
+	public ModelAndView decreaseQuantity(@PathVariable("id") Long id, @SessionAttribute(name="user", required=false) User user, HttpSession session) {
+		CartItem item = cartItemDao.findById(id);
+		Long qty = item.getQuantity();
+		
+		if (qty == 1) {
+			cartItemDao.delete(id);
+			return new ModelAndView("redirect:/cart");
+		}
+		
+		item.setQuantity(qty - 1);
+		cartItemDao.update(item);
+		
+		
+		return new ModelAndView("redirect:/cart");
+	}
+	
 	@RequestMapping("/userMenu/{id}")
-	public ModelAndView addItemToCart(@PathVariable("id") Long id, @SessionAttribute(name="user", required=false) User user, HttpSession session) {
+	public ModelAndView addItemToCart(@PathVariable("id") Long id, @SessionAttribute(name="user", required=false) User user, HttpSession session, RedirectAttributes redir) {
 		CartItem cartItem = new CartItem();
 		
 		cartItem.setMenuItem(menuItemDao.findById(id));
@@ -169,6 +198,7 @@ public class CoffeeShopWebAppController {
 		
 		cartItem.setQuantity((long) 1);
 		cartItemDao.create(cartItem);
+		redir.addFlashAttribute("message", "Item added");
 		return new ModelAndView("redirect:/userMenu");
 	}
 	
