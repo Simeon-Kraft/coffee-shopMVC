@@ -23,6 +23,9 @@ body, html {
 		<div>
 			<div class="container">
 				<h3>Cart</h3>
+				<c:if test="${ empty user }">
+    				<h3>NO USER</h3>
+  			 	</c:if>
 				<table class="table table-sm">
 					<thead class="thead-dark">
 						<tr>

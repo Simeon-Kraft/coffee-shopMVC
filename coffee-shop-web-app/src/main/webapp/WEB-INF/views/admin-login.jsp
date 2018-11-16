@@ -12,39 +12,37 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="/admin.css">
 <style>
 body,h1,h5 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-    background-image: url('/images/beans.jpg');
+    background-image: url('/images/simeon.jpg');
     min-height: 100%;
-    background-position: center;
-    background-size: cover;
+    background-position: center no-repeat;
+    background-size: 20%;
+    
 }
 </style>
 <body>
 
 <div class="bgimg w3-display-container w3-text-white">
-  <div id="titlebox" class="w3-display-middle w3-jumbo">
-   	 <p class="title">it's<br>COFFEE<br>time</p>
-  </div>
-  <div class="w3-display-topleft w3-container w3-xlarge">
-  	<p class="message">${ message }</p>
-  	<c:if test="${ empty user }">
-    	<p><a href="/register"><button class="w3-button w3-black">register</button></a></p>
-    	<p><a href="/login"><button class="w3-button w3-black">login</button></a></p>
-    </c:if>
-    <c:if test="${ not empty user }">
-   		 <p><a href="/userMenu"><button class="w3-button w3-black">menu</button></a></p>
-   		 <p><a href="/logout"><button class="w3-button w3-black">logout</button></a></p>
-	</c:if>
+  <div id="loginbox" class="w3-display-topleft w3-large">
+   	 <form action="/admin-login" method="post">
+   	 	<p class="login"><label for="username">Email:</label> <input class="input-field" id="email" name="email" value="${ param.email }" required minlength="2" /></p>
+   	 	
+   	 	<p class="login"><label for="password">Password:</label>   <input class="input-field" id="password" type="password" name="password" required minlength="2" /></p>
+   	 	<p id="loginbtn"><button type="submit" class="w3-button w3-white">login</button></p>
+   	 	<p class="message">${ message }</p>
+   	 </form>
   </div>
  
+  <div class="w3-display-bottomright w3-container">
+    <p class="w3-small">Just do it.</p>
+  </div>
   <div class="w3-display-bottomleft w3-container">
     <p class="w3-small">Simeon Kraft</p>
     <p class="w3-small">Powered by Java and java.</p>
-    <p class="w3-small"><a href="admin-login"><button class="w3-button w3-black">I'm an admin.</button></a></p>
   </div>
 </div>
 	<!-- Optional JavaScript -->

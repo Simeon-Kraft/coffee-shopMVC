@@ -22,6 +22,9 @@ body, html {
 		<div>
 			<div class="container">
 				<h3>Menu Items</h3>
+				<c:if test="${ empty user }">
+    				<h3>NO USER</h3>
+  			 	</c:if>
 				<table class="table table-dark">
 					<thead class="thead-dark">
 						<tr>
@@ -41,7 +44,7 @@ body, html {
 					</c:forEach>
 				</table>
 				<a href="/"><button id="add" class="btn btn-info">Back</button></a>
-				<a href="/cart"><button id="add" class="btn btn-success">Go To Cart</button></a>
+				<a href="/cart"><button id="add" class="btn btn-success">View Cart (${ qty })</button></a>
 			</div>
 		</div>
 	</div>

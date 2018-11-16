@@ -1,5 +1,6 @@
 package co.grandcircus.coffeeshopwebapp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.NoResultException;
@@ -39,7 +40,7 @@ public class CoffeeShopWebAppController {
 	private UserDao userDao;
 	
 	@RequestMapping("/")
-	public ModelAndView index(@SessionAttribute(name="profile", required=false) User user, HttpSession session) {
+	public ModelAndView index(@SessionAttribute(name="user", required=false) User user, HttpSession session) {
 		return new ModelAndView("index", "user", user);
 	}
 	
@@ -103,18 +104,62 @@ public class CoffeeShopWebAppController {
 	}
 	
 	@RequestMapping("/userMenu")
-	public ModelAndView showUserMenu() {
+	public ModelAndView showUserMenu(@SessionAttribute(name="user", required=false) User user, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
 		List<MenuItem> itemList = menuItemDao.findAll();
-		return new ModelAndView("userMenu", "items", itemList);
+		List<CartItem> cart = cartItemDao.findUserItems(user);
+		Long qty = (long) 0;
+		for (CartItem c : cart) {
+			qty = qty + c.getQuantity();
+		}
+	
+		
+		
+		mv.addObject("items", itemList);
+		mv.addObject("qty", qty);
+		
+		return mv;
+	}
+	
+	@RequestMapping("/admin-login")
+	public ModelAndView adminLogin(HttpSession session) {
+		return new ModelAndView("admin-login");
+	}
+	
+	@PostMapping("/admin-login")
+	public ModelAndView postAdminLogin(@RequestParam("email") String email, 
+			@RequestParam("password") String password, HttpSession session, RedirectAttributes redir) {
+		
+		User user = new User();
+		User admin = userDao.findByEmail("kraft.simeon.sk@gmail.com");
+		try {
+			 user = userDao.findByEmail(email);
+		}catch(NoResultException e) {
+			return new ModelAndView("admin-login", "message", "NOPE");
+		}
+		
+		if (!user.getEmail().equals(admin.getEmail())) {
+			return new ModelAndView("admin-login", "message", "NOPE");
+		}
+		if (!user.getPassword().equals(admin.getPassword())) {
+			return new ModelAndView("admin-login", "message", "NOPE");
+		}
+		
+		session.setAttribute("user", user);
+		redir.addFlashAttribute("message", "Its coffee time.");
+		return new ModelAndView("redirect:menu");
+		
 	}
 	
 	@RequestMapping("/userMenu/{id}")
-	public ModelAndView addItemToCart(@PathVariable("id") Long id) {
+	public ModelAndView addItemToCart(@PathVariable("id") Long id, @SessionAttribute(name="user", required=false) User user, HttpSession session) {
 		CartItem cartItem = new CartItem();
+		
 		cartItem.setMenuItem(menuItemDao.findById(id));
+		cartItem.setUser(user);
 		
 		for (CartItem c : cartItemDao.findAll()) {
-			if (c.getMenuItem().getId() == cartItem.getMenuItem().getId()) {
+			if ((c.getMenuItem().getId() == cartItem.getMenuItem().getId())) {
 				Long qty = c.getQuantity() + 1;
 				c.setQuantity(qty);
 				cartItemDao.update(c);
@@ -135,12 +180,13 @@ public class CoffeeShopWebAppController {
 	}
 	
 	@RequestMapping("/cart")
-	public ModelAndView showCart() {
-		List<CartItem> itemList = cartItemDao.findAll();
+	public ModelAndView showCart(@SessionAttribute(name="user", required=false) User user, HttpSession session) {
+		List<CartItem> itemList = cartItemDao.findUserItems(user);
 		double total = 0;
 		
 		for (CartItem item : itemList) {
-			total = total + (item.getMenuItem().getPrice() * item.getQuantity());
+				total = total + (item.getMenuItem().getPrice() * item.getQuantity());
+			
 		}
 		
 		

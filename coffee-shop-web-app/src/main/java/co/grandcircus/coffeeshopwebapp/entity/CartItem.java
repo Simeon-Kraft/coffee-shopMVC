@@ -1,5 +1,6 @@
 package co.grandcircus.coffeeshopwebapp.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,8 @@ public class CartItem {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private Long quantity;
+	@ManyToOne
+	private User user;
 	@ManyToOne
 	private MenuItem menuItem;
 	
@@ -44,6 +47,14 @@ public class CartItem {
 
 	public void setMenuItem(MenuItem menuItem) {
 		this.menuItem = menuItem;
+	}
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public User getUser() {
+		return user;
 	}
 
 	@Override

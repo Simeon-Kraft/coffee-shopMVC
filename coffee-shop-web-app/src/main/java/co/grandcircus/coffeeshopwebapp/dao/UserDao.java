@@ -32,5 +32,9 @@ public class UserDao {
 		String hql = "FROM User WHERE email = :email";
 		return em.createQuery(hql, User.class).setParameter("email", email).getSingleResult();		
 	}
+	
+	public User findById(Long id) {
+		return em.find(User.class, id);
+	}
 
 }

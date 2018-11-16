@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import co.grandcircus.coffeeshopwebapp.entity.CartItem;
+import co.grandcircus.coffeeshopwebapp.entity.User;
 
 @Repository
 @Transactional
@@ -21,8 +22,8 @@ public class CartItemDao {
 		return em.createQuery("FROM CartItem", CartItem.class).getResultList();
 	}
 	
-	public List<CartItem> findAllDistinct() {
-		return em.createQuery("DISTINCT FROM CartItem", CartItem.class).getResultList();
+	public List<CartItem> findUserItems(User user) {
+		return em.createQuery("FROM CartItem WHERE user = :user", CartItem.class).setParameter("user", user).getResultList();
 	}
 
 	public void create(CartItem cartItem) {

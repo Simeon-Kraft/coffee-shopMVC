@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+.title {
+	color: white;
+	font-size: 105%;
+	text-align: center;
+}
+#titlebox {
+	background-color: black;
+	height: 65%;
+	margin: 10px;
+}
+#loginbox {
+	background-color: black;
+	margin: 10px;
+	height: 25%;
+}
+.message:empty {
+	display: none;
+}
+.message {
+	padding: 8px;
+	background-color: pink;
+	color: black;
+}
+.login {
+	font-size: medium;
+	margin: 12px;
+}
+#loginbtn {
+	margin: 12px;
+}
+.input-field {
+	font-size: small;
+}
